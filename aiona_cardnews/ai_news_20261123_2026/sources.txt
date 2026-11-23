@@ -1,0 +1,4 @@
+Google Developers: https://developers.googleblog.com/gemini-hydrogen-for-robotics/
+Anthropic: https://www.anthropic.com/news/ipo-close
+DeepSeek: https://api-docs.deepseek.com/news/news261113/
+Google AI: https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/

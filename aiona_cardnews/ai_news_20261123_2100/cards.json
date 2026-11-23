@@ -1,0 +1,73 @@
+{
+ "cover": {
+  "line1": "이번 주 AI 뉴스,",
+  "line2": "4가지만 보면 끝"
+ },
+ "news": [
+  {
+   "short": "Gemini 4 Hydrogen 공개",
+   "title": [
+    "로봇공학 특화",
+    "[Gemini] 출시"
+   ],
+   "points": [
+    "속도와 효율을 높인 로봇 특화 모델",
+    "Google Antigravity 플러그인 지원",
+    "자연어 프롬프트 기반 실시간 제어"
+   ],
+   "note": "11월 17일 로봇 플러그인 공개",
+   "stat": {
+    "label": "Robotics 0.1 점수",
+    "value": "58점",
+    "desc": "Argon 모델과 유사한 수준의 성과"
+   }
+  },
+  {
+   "short": "Anthropic IPO 마감",
+   "title": [
+    "앤스로픽 IPO",
+    "[공모 완료]"
+   ],
+   "points": [
+    "공모가 주당 83달러에 매각 완료",
+    "나스닥 시장 ANT 종목명 거래 시작",
+    "사모 포함 총 약 1,195억 달러"
+   ],
+   "note": "11월 19일 상장",
+   "stat": {
+    "label": "주당 공모가",
+    "value": "$83.00",
+    "desc": "Class A 보통주 공모 가격"
+   }
+  },
+  {
+   "short": "DeepSeek 앱 API 출시",
+   "title": [
+    "DeepSeek 앱",
+    "[API] 전면 공개"
+   ],
+   "points": [
+    "검색·파일입력·URL읽기 기능 제공",
+    "OCR·ASR·TTS 독립 API 지원",
+    "V4.1-Flash 모델 서버 처리"
+   ],
+   "note": "11월 13일 공개",
+   "stat": null
+  },
+  {
+   "short": "Gemini 도구 검색 도입",
+   "title": [
+    "Gemini API",
+    "[도구 검색] 도입"
+   ],
+   "points": [
+    "필요시에만 매개변수 스키마 로드",
+    "입력 토큰 소모 및 지연 시간 감소",
+    "Interactions API 미리보기 지원"
+   ],
+   "note": "11월 19일 공개",
+   "stat": null
+  }
+ ],
+ "caption": "\"이번 주 AI 뉴스, 4가지만 보면 끝\" 📰\n\n글로벌 AI 시장과 최신 주요 소식을 한눈에 정리했어요.\n\n구글이 속도와 효율을 강화한 로봇 특화 모델 'Gemini 4 Hydrogen'과 전용 개발 플러그인을 공개했어요.\n\n앤스로픽이 주당 83달러에 성공적으로 상장 공모를 마치고 나스닥 거래를 시작했어요.\n\nDeepSeek가 웹 검색, 문서 분석, 음성 기능 등 앱의 핵심 기능을 API 형태로 정식 출시했어요.\n\n구글 Gemini API에 필요할 때만 도구 명세를 불러와 토큰을 절감하는 Tool Retrieval 기능이 추가됐어요.\n\n카드뉴스를 넘겨 자세한 내용을 확인해보세요."
+}
