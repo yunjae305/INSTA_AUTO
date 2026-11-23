@@ -1,0 +1,34 @@
+{
+ "cover": {"line1": "이번 주 AI 뉴스,", "line2": "4가지만 보면 끝"},
+ "news": [
+  {
+   "short": "Gemini 4 Hydrogen 공개",
+   "title": ["구글 로봇용 AI", "[Hydrogen] 공개"],
+   "points": ["말로 목표 주면 로봇 팔 직접 제어", "Antigravity 로봇 플러그인 동시 출시", "로봇 벤치마크 58점, Argon과 비슷"],
+   "note": "11월 17일 Google Developers 블로그",
+   "stat": null
+  },
+  {
+   "short": "앤트로픽 IPO 마무리",
+   "title": ["앤트로픽,", "[IPO] 마무리"],
+   "points": ["공모가 주당 83달러", "11월 19일 나스닥 상장 (ANT)", "엔비디아·구글·MS 등 사모 참여"],
+   "note": "앤트로픽 공식 발표",
+   "stat": {"label": "IPO + 사모 총 조달액", "value": "$119.5B", "desc": "공모 935억 달러 + 사모 260억 달러 (수수료 차감 전)"}
+  },
+  {
+   "short": "DeepSeek 앱 기능 API 공개",
+   "title": ["DeepSeek 앱 기능,", "이제 [API]로"],
+   "points": ["웹 검색·파일 입력·URL 읽기 지원", "OCR·음성인식·TTS 단독 API", "공개 서비스는 안전 검사 필수"],
+   "note": "11월 13일 DeepSeek 공지",
+   "stat": null
+  },
+  {
+   "short": "Gemini API 툴 검색 추가",
+   "title": ["Gemini API에", "[툴 검색] 추가"],
+   "points": ["필요한 도구 정보만 그때그때 로드", "입력 토큰·지연 시간 감소", "Gemini 3.6 이상, 프리뷰 제공"],
+   "note": "11월 19일 Google 블로그",
+   "stat": null
+  }
+ ],
+ "caption": "\"이번 주 AI 뉴스, 4가지만 보면 끝\" 📰\n\n이번 주도 AI 업계가 바쁘게 돌아갔어요.\n\n구글이 로봇용 모델 Gemini 4 Hydrogen을 공개했어요. 말로 목표를 주면 카메라 화면을 보고 로봇 팔을 직접 움직이고, 로봇 개발용 Antigravity 플러그인도 함께 나왔어요.\n\n앤트로픽은 IPO를 마무리했어요. 공모가는 주당 83달러, 사모까지 합쳐 약 1,195억 달러를 모았고 11월 19일 나스닥에 'ANT'로 상장했어요.\n\nDeepSeek은 앱의 웹 검색·파일 읽기·음성 기능을 API로 열었어요. OCR·음성인식·TTS도 따로 쓸 수 있어요.\n\nGemini API에는 Tool Retrieval이 프리뷰로 추가됐어요. 필요한 도구 정보만 불러와 토큰과 지연 시간을 줄여 줘요.\n\n카드뉴스를 넘겨 자세한 내용을 확인해보세요."
+}
