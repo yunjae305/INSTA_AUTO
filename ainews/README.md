@@ -52,6 +52,19 @@ python3 ainews/ainews.py render aiona_cardnews/ai_news_<날짜_시각>
 - `sources.txt`의 원문과 카드의 숫자·날짜·이름을 대조한다. AI 요약은 틀릴 수 있다.
 - `card_1.png`부터 차례로 올리고, 본문에는 `caption.txt`를 붙인다.
 
+## 서버에서 자동 수집 (Oracle Always Free)
+
+서버(Ubuntu)는 매일 08:00·20:00에 `collect`만 돌린다. 고르기·카드 만들기는 PC에서 한다.
+
+```bash
+scp ~/INSTA_AUTO/.env ubuntu@<서버IP>:~/INSTA_AUTO.env          # 키 (선택)
+ssh ubuntu@<서버IP> 'mkdir -p INSTA_AUTO && mv -f INSTA_AUTO.env INSTA_AUTO/.env; curl -fsSL https://raw.githubusercontent.com/yunjae305/INSTA_AUTO/ccr-d57bbe8e-ikmxxg/ainews/deploy/setup_server.sh | bash'
+scp ubuntu@<서버IP>:INSTA_AUTO/ainews/db/aifield.db ~/INSTA_AUTO/ainews/db/   # 카드 만들기 전에 PC로 받기
+```
+
+- 서버에는 ego lite가 없어서 ego 페이지 읽기(18곳)는 건너뛴다. 그 소식이 필요하면 PC에서 `collect`를 한 번 더 돌린다.
+- Oracle은 7일간 CPU·네트워크 사용률이 20% 미만인 Always Free 서버를 회수할 수 있다. 회수되면 새로 만들고 위 명령만 다시 실행한다.
+
 ## .env (커밋 금지, `.gitignore`에 있음)
 
 ```

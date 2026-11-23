@@ -6,3 +6,5 @@ ainews/db/*.db
 
 __pycache__/
 *.pyc
+.venv/
+ainews/*.log
