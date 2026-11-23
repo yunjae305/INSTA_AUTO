@@ -9,7 +9,8 @@ BRANCH=${BRANCH:-main}
 DIR=$HOME/INSTA_AUTO
 
 sudo apt-get update -qq
-sudo apt-get install -y -qq git python3-venv
+sudo apt-get install -y -qq git python3-venv cron
+sudo systemctl enable --now cron   # 이미 켜져 있어도 안전
 sudo timedatectl set-timezone Asia/Seoul   # cron 시각을 한국 시간으로
 
 if [ -d "$DIR/.git" ]; then
