@@ -5,7 +5,7 @@
 set -euo pipefail
 
 REPO=https://github.com/yunjae305/INSTA_AUTO.git
-BRANCH=${BRANCH:-ccr-d57bbe8e-ikmxxg}
+BRANCH=${BRANCH:-main}
 DIR=$HOME/INSTA_AUTO
 
 sudo apt-get update -qq

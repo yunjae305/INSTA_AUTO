@@ -58,7 +58,7 @@ python3 ainews/ainews.py render aiona_cardnews/ai_news_<날짜_시각>
 
 ```bash
 scp ~/INSTA_AUTO/.env ubuntu@<서버IP>:~/INSTA_AUTO.env          # 키 (선택)
-ssh ubuntu@<서버IP> 'mkdir -p INSTA_AUTO && mv -f INSTA_AUTO.env INSTA_AUTO/.env; curl -fsSL https://raw.githubusercontent.com/yunjae305/INSTA_AUTO/ccr-d57bbe8e-ikmxxg/ainews/deploy/setup_server.sh | bash'
+ssh ubuntu@<서버IP> 'mkdir -p INSTA_AUTO && mv -f INSTA_AUTO.env INSTA_AUTO/.env; curl -fsSL https://raw.githubusercontent.com/yunjae305/INSTA_AUTO/main/ainews/deploy/setup_server.sh | bash'
 scp ubuntu@<서버IP>:INSTA_AUTO/ainews/db/aifield.db ~/INSTA_AUTO/ainews/db/   # 카드 만들기 전에 PC로 받기
 ```
 
