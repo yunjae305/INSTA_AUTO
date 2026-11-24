@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Oracle Always Free 서버(Ubuntu 이미지)에서 AI 소식 수집을 매일 자동으로 돌린다.
+# Oracle Always Free 서버(Ubuntu 이미지)에서 AI 소식 수집·텔레그램 알림을 5분마다 자동으로 돌린다.
 # 여러 번 실행해도 안전하다 (서버가 회수돼 새로 만들었을 때도 이것만 다시 실행).
 #   사용: bash setup_server.sh        (먼저 PC에서 .env를 scp로 올려 두면 Gemini·Reddit 키도 쓰인다)
 set -euo pipefail
@@ -26,8 +26,10 @@ python3 -m venv "$DIR/.venv"
 
 if [ -f "$DIR/.env" ]; then chmod 600 "$DIR/.env"; else echo "참고: $DIR/.env 없음 (키 없이도 수집은 됨, Reddit만 건너뜀)"; fi
 
-# 매일 08:00, 20:00 수집. 기존 줄은 지우고 다시 넣는다
-LINE="0 8,20 * * * cd $DIR && .venv/bin/python ainews/ainews.py collect >> $DIR/ainews/collect.log 2>&1"
+# 5분마다 수집 → 신규 주목 소식 실시간 텔레그램 알림. 기존 줄은 지우고 다시 넣는다.
+#   flock -n: 앞 회차 수집이 아직 돌고 있으면 이번 회차는 건너뛴다(1코어 micro 보호).
+#   필터(레벨·제외 출처·회당 건수)는 .env 의 AINEWS_* 로 조정한다.
+LINE="*/5 * * * * cd $DIR && flock -n $HOME/.ainews.lock sh -c '.venv/bin/python ainews/ainews.py collect >> $DIR/ainews/collect.log 2>&1; .venv/bin/python ainews/notify_telegram.py >> $DIR/ainews/collect.log 2>&1'"
 ( crontab -l 2>/dev/null | grep -v 'ainews.py collect' || true; echo "$LINE" ) | crontab -
 echo "cron 등록:"; crontab -l | grep 'ainews.py collect'
 

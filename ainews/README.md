@@ -54,7 +54,7 @@ python3 ainews/ainews.py render aiona_cardnews/ai_news_<날짜_시각>
 
 ## 서버에서 자동 수집 (Oracle Always Free)
 
-서버(Ubuntu)는 매일 08:00·20:00에 `collect`만 돌린다. 고르기·카드 만들기는 PC에서 한다.
+서버(Ubuntu)는 5분마다 `collect`를 돌리고(`flock`으로 회차 중복 방지), DB에 새로 들어온 주목 소식 중 레벨 3 이상인 것을 `notify_telegram.py`가 **1건당 1메시지**로 텔레그램(@pasuin_bot)에 바로 보낸다. 메시지 형식은 `출처 / 제목 / 요약 / 원문 링크`. 고르기·카드 만들기는 PC에서 한다.
 
 ```bash
 scp ~/INSTA_AUTO/.env ubuntu@<서버IP>:~/INSTA_AUTO.env          # 키 (선택)
@@ -73,4 +73,11 @@ GEMINI_MODEL=...                   # 선택. 없으면 gemini-3.8-flash → 막�
 REDDIT_CLIENT_ID=...               # Reddit API 승인 후
 REDDIT_CLIENT_SECRET=...
 REDDIT_USERNAME=...
+TELEGRAM_BOT_TOKEN=...             # 텔레그램 봇 토큰 (알림 발송)
+TELEGRAM_CHAT_ID=...               # 받을 채팅 id
+AINEWS_MIN_LEVEL=3                 # 알림 임계값(alert_level). 4=should_alert, 1=모든 새 글
+AINEWS_SKIP_SOURCES=HF Daily Papers  # 알림에서 뺄 출처(쉼표 구분). DB 저장은 그대로
+# AINEWS_MAX_PER_RUN=5             # 5분당 건별 메시지 상한, 넘으면 한 줄 요약
+# AINEWS_OVERFLOW=1                # 한도 초과분 한 줄 알림 (0=생략)
+# AINEWS_SUMMARY_LIMIT=450         # 요약 본문 최대 글자수
 ```
